@@ -5,6 +5,8 @@ const debugExpress = require('debug')('app:express');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 // Handle Uncaught Exceptions
 process.on('uncaughtException', error => {
@@ -48,13 +50,16 @@ app.get('/api', function (req, res) {
   });
 });
 
+// documentation route
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 // 404 route
 app.use(function (req, res, next) {
-	res.status(404).json({
-		error: {
-			message: 'Resource not found.'
-		}
-	});
+  res.status(404).json({
+    error: {
+      message: 'Resource not found.'
+    }
+  });
 });
 
 // development error handler

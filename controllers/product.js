@@ -31,6 +31,7 @@ exports.getOne = async (req, res) => {
 
     if (!product) {
         res.status(404).json({
+        	status: false,
             message: 'Product not found.'
         });
         return;
