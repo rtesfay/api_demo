@@ -8,4 +8,4 @@
 
 ## Docmentation
 
-`/doc'
+`/doc`
