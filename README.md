@@ -1,10 +1,10 @@
 # Demo E-commerce API
 
-**.env.test is included for getting started immediately**
+**.env is included for getting started immediately**
 
 ## Run Project
 
-`docker-compose --env-file .env.test up`
+`docker-compose up`
 
 ## Docmentation
 
